@@ -12,4 +12,4 @@ notify-send is used to push notifcation when theme changes
 
 **Important :**  
 Remember to blacklist the package  
-echo "lookandfeel-*" | sudo tee -a /etc/slackpkg/blacklist
+``echo "lookandfeel-*" | sudo tee -a /etc/slackpkg/blacklist``
