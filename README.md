@@ -10,5 +10,7 @@ Shell script : /usr/bin/lookandfeel
 Configuration file : /etc/lookandfeel.conf  
 Desktop file : /etc/xdg/autostart/lookandfeel.desktop
 
+notify-send is used to push notifcation when theme changes
+
 NB: because of the "sleep 5m" in the while loop  
 It needs ~5min. to exit the loop on logout
