@@ -9,6 +9,7 @@ if [ -r /etc/lookandfeel.conf ]; then
   . /etc/lookandfeel.conf
 fi
 
+COUNT=300
 while [ "$NOW" -lt "2359" ] ; do
   if [ "$COUNT" -lt "300" ] ; then
     COUNT=$((COUNT+1))
