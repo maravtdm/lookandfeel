@@ -24,7 +24,7 @@ cp $CWD/lookandfeel.conf $PKG/etc/lookandfeel.conf.new
 cp $CWD/lookandfeel.desktop $PKG/etc/xdg/autostart/
     chown root:root -R $PKG/etc/xdg/autostart/
     
-cp $CWD/README $PKG/usr/doc/${PRGNAM}-${VERSION}
+cp $CWD/README.md $PKG/usr/doc/${PRGNAM}-${VERSION}
     chmod 644 $PKG/usr/doc/${PRGNAM}-${VERSION}/*
 
 echo \
