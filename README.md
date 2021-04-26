@@ -2,7 +2,8 @@
 
 
 The package is a Slackware plasma5 theme changer when day starts & ends  
-It uses "daemon" to turn the script into daemon  
+It uses "daemon" to turn the script into daemon
+which runs at login and quit on logout  
 Thanks to raforg : http://raf.org/daemon
 
 Shell script : /usr/bin/lookandfeel  
