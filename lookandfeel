@@ -10,6 +10,13 @@ if [ -r /etc/lookandfeel.conf ]; then
 fi
 
 while [ "$NOW" -lt "2359" ] ; do
+  if [ "$COUNT" -lt "300" ] ; then
+    COUNT=$((COUNT+1))
+    sleep 1
+    continue;
+  fi
+  COUNT=0
+  
   START=${START:-0800}
   END=${END:-2000}
 
@@ -26,6 +33,5 @@ while [ "$NOW" -lt "2359" ] ; do
   fi
   LOOK=$(cat ${KDE_CONF_DIR}/kdeglobals | awk -F'=' '/LookAndFeelPackage/,$0=$2')
   NOW=$(date +%H%M)
-  sleep 5m
 done
 
