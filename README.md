@@ -1,7 +1,7 @@
 # lookandfeel
 
 
-The package provide a Slackware slackbuild script for plasma5  
+The package provide a Slackware slackbuild for plasma5  
 It's an automatic theme switcher when day starts & ends  
 
 It uses "daemon" to turn the script into daemon
