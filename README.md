@@ -12,5 +12,5 @@ Thanks to ZhaoLin & raforg : http://raf.org/daemon
 notify-send is used to push notifcation when theme changes
 
 **Important :**  
-To avoid the package to be removed, remember to add it to the blacklist
+To avoid the package to be removed, remember to add it to the blacklist  
 ``echo "lookandfeel-*" | sudo tee -a /etc/slackpkg/blacklist``
