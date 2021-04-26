@@ -6,7 +6,7 @@ It's an automatic theme switcher when day starts & ends
 
 It uses "daemon" to turn the script into daemon
 which runs at login and quit on logout  
-Thanks to raforg : http://raf.org/daemon
+Thanks to ZhaoLin & raforg : http://raf.org/daemon
 
 Shell script : /usr/bin/lookandfeel  
 Configuration file : /etc/lookandfeel.conf  
