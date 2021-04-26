@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.1
 Name=Look And Feel
-Comment=Change plasma theme during the day
+Comment=Change plasma5 theme during the day
 Exec=/usr/bin/daemon -frB --pidfiles=~/.run --name=lookandfeel /usr/bin/lookandfeel
 Terminal=false
 Type=Application
