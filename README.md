@@ -3,6 +3,7 @@
 
 The package provide a slackbuild for plasma5  
 It's an automatic theme switcher when day starts & ends  
+$START & $END can be defined in /etc/lookandfeel.conf (default values are 8:00 - 20:00)
 
 It uses "daemon" to turn the script into daemon
 which runs at login and terminates on logout  
