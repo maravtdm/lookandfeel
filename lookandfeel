@@ -1,0 +1,31 @@
+#!/bin/bash
+### Switch between Twilight / Dark theme during the day 
+
+KDE_CONF_DIR="/home/$USER/.config"
+LOOK=$(cat ${KDE_CONF_DIR}/kdeglobals | awk -F'=' '/LookAndFeelPackage/,$0=$2')
+NOW=$(date +%H%M)
+
+if [ -r /etc/lookandfeel.conf ]; then
+  . /etc/lookandfeel.conf
+fi
+
+while [ "$NOW" -lt "2359" ] ; do
+  START=${START:-0800}
+  END=${END:-2000}
+
+  if [ "$NOW" -lt "$END" ] && [ "$NOW" -gt "$START" ] ; then
+    if [ "$LOOK" != "$DAY_THEME" ] ; then
+      lookandfeeltool --apply "$DAY_THEME" >/dev/null 2>&1
+      notify-send "Look & Feel" "Day Theme : On"
+    fi
+  else 
+    if [ "$LOOK" != "$NIGHT_THEME" ] ; then
+      lookandfeeltool --apply "$NIGHT_THEME" >/dev/null 2>&1
+      notify-send "Look & Feel" "Night Theme : On"
+    fi
+  fi
+  LOOK=$(cat ${KDE_CONF_DIR}/kdeglobals | awk -F'=' '/LookAndFeelPackage/,$0=$2')
+  NOW=$(date +%H%M)
+  sleep 5m
+done
+

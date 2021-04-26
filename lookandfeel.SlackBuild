@@ -1,0 +1,39 @@
+#!/bin/sh
+PRGNAM=lookandfeel
+VERSION=1.0
+ARCH=noarch
+BUILD=$(cat /etc/os-release | awk -F'=' '/^NAME/,$0=$2')
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/SBo}
+PKG=$TMP/package-$PRGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+rm -rf $PKG
+mkdir $TMP $PKG $OUTPUT
+mkdir -p $PKG/usr/doc/${PRGNAM}-${VERSION}
+mkdir -p $PKG/{usr/bin,install,etc/xdg/autostart}
+
+cp $CWD/lookandfeel $PKG/usr/bin/
+    chmod 755 -R $PKG/usr/bin
+    chown root:root -R $PKG/usr/bin
+
+cp $CWD/lookandfeel.conf $PKG/etc/lookandfeel.conf.new
+    chmod 644 $PKG/etc/lookandfeel.conf.new
+
+cp $CWD/lookandfeel.desktop $PKG/etc/xdg/autostart/
+    chown root:root -R $PKG/etc/xdg/autostart/
+    
+cp $CWD/README $PKG/usr/doc/${PRGNAM}-${VERSION}
+    chmod 644 $PKG/usr/doc/${PRGNAM}-${VERSION}/*
+
+echo \
+    "${PRGNAM}: lookandfeel (day/night plasma5 theme changer)
+    ${PRGNAM}:
+    ${PRGNAM}: Author: marav." >$PKG/install/slack-desc
+
+cp $0 $PKG/install/
+cp doinst.sh $PKG/install
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD.txz
