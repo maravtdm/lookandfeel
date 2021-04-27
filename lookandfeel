@@ -1,5 +1,5 @@
 #!/bin/bash
-### Switch between Twilight / Dark theme during the day 
+### Switch between Light / Dark theme during the day 
 
 KDE_CONF_DIR="/home/$USER/.config"
 LOOK=$(cat ${KDE_CONF_DIR}/kdeglobals | awk -F'=' '/LookAndFeelPackage/,$0=$2')
