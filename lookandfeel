@@ -1,4 +1,6 @@
 #!/bin/bash
+### Main program
+### Thanks to LuckyCyborg for the adjustments
 ### Switch between Light / Dark theme during the day 
 
 KDE_CONF_DIR="/home/$USER/.config"
